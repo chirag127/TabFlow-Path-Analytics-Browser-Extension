@@ -1,87 +1,87 @@
 ---
-name: Bug Report
-about: Report a bug in the TabFlow extension
-title: "Bug: "
-labels: bug, triage
-assignees: ""
+name: "🐛 System Integrity Failure Report"
+about: Report a failure in tracking, rendering, or core architectural logic of the extension.
+title: "[BUG] Descriptive summary of the unexpected behavior or failure point"
+labels: ['bug', 'triage:needed', 'priority:medium', 'type:integrity']
+assignees: ['chirag127']
+---
 
-body:
-  - type: markdown
-    attributes:
-      value: | # This is a markdown section header
-        ### 🐛 Bug Report
-
-        Thanks for reporting a bug! Please fill out the following information to help us diagnose and fix the issue quickly.
-
-        **Please search our existing issues before opening a new one.**
-
-        --- # Horizontal Rule
-
-  - type: input
-    id: version
-    attributes:
-      label: TabFlow Extension Version
-      description: The version of the TabFlow extension you are using.
-      placeholder: e.g., 1.2.3
-    validations:
-      required: true
-
-  - type: input
-    id: browser-version
-    attributes:
-      label: Browser and Version
-      description: The browser (e.g., Chrome, Firefox) and its version where the bug occurred.
-      placeholder: e.g., Chrome 120.0.0
-    validations:
-      required: true
-
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: What happened?
-      description: Describe the bug in detail. What were you doing when it occurred?
-      placeholder: e.g., When I navigate to a specific website, the graph visualization becomes unresponsive.
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected-behavior
-    attributes:
-      label: What did you expect to happen?
-      description: Describe what you expected to happen instead.
-      placeholder: e.g., I expected the visualization to update correctly and remain interactive.
-    validations:
-      required: true
-
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: Steps to Reproduce
-      description: Provide a step-by-step guide on how to reproduce the bug.
-      placeholder: |
-        1. Install version X.Y.Z of TabFlow.
-        2. Open Chrome.
-        3. Navigate to `https://example.com`.
-        4. Click on link A, then link B.
-        5. Observe the visualization.
-    validations:
-      required: true
-
-  - type: textarea
-    id: screenshots-logs
-    attributes:
-      label: Screenshots or Screen Recordings (Optional)
-      description: If possible, attach screenshots or a screen recording that demonstrates the bug. You can drag and drop files here.
-    validations:
-      required: false
-
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: Additional Context (Optional)
-      description: Any other relevant information that might help us understand the problem, such as your operating system, extensions you have installed, or specific website behaviors.
-      placeholder: e.g., OS: Windows 11, Other extensions: AdBlock, Some sites with complex navigation chains seem to trigger this more often.
-    validations:
-      required: false
+Thank you for taking the time to report this critical issue. Your detailed input helps us maintain the **Zero-Defect Standard** for the **TabFlow Digital Journey Mapper**. Before submitting, please ensure you have completed the following diagnostic steps.
 
 ---
+
+## 🛑 Pre-flight Diagnostic Checklist
+
+Please check all relevant boxes before proceeding. **Incomplete reports will be immediately closed pending required information.**
+
+- [ ] I have searched the [existing issues](https://github.com/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/issues) to ensure this bug has not already been reported.
+- [ ] I am running the **latest stable release or the current main branch build**.
+- [ ] I have read the [CONTRIBUTING Guidelines](CONTRIBUTING.md).
+- [ ] This bug occurs consistently and is easily reproducible.
+- [ ] I have attached relevant diagnostic logs (console output, network tab details).
+
+---
+
+## 1. System and Environment Integrity
+
+Provide crucial information about the environment where the bug was encountered. This is essential for accurate reproduction.
+
+### Extension Details
+*   **TabFlow Version:** [e.g., v1.2.5, or `main` branch commit SHA]
+*   **Installation Method:** [e.g., Chrome Web Store, Firefox Add-on Store, Local build]
+*   **Active Mode:** [e.g., Default (Full Tracking), Incognito Mode, Selective Tracking]
+
+### Host Environment
+*   **Browser Name & Version:** [e.g., Chrome 127.0.6533.0, Firefox 128]
+*   **Operating System:** [e.g., macOS Sonoma 14.4, Windows 11, Linux]
+*   **System Architecture:** [e.g., x64, ARM64]
+
+---
+
+## 2. Steps to Reproduce (GIVEN/WHEN/THEN Format)
+
+Provide a precise, step-by-step description using the **GIVEN-WHEN-THEN** structure. Aim for deterministic reproduction.
+
+1.  **GIVEN** I have initiated a tracking session by [Describe state, e.g., opening a new window, clearing history].
+2.  **WHEN** I navigate from `Page A` (`[Start URL]`) to `Page B` (`[Next URL]`) via [e.g., link click, form submission, programmatic redirect].
+3.  **AND THEN** [Next critical step, e.g., I close the original tab or wait 60 seconds].
+4.  **RESULT:** [Describe the immediate failure point].
+
+### Relevant URLs
+If applicable, list the sequence of URLs involved in the journey where the tracking failed:
+*   URL 1: `[Start URL]`
+*   URL 2: `[Next URL]`
+*   ...
+
+---
+
+## 3. Expected vs. Actual Behavior (CQS Analysis)
+
+### Expected Behavior (The Query Result)
+Describe exactly what the software should have done, adhering to the principle of Command-Query Separation (CQS).
+> *Example: The journey map should correctly render a directed edge from the node representing Page A to the node representing Page B, with appropriate timestamp metadata.* 
+
+### Actual Behavior (The Observed Failure)
+Describe exactly what happened instead, including any visual discrepancies, frozen UI elements, or data loss.
+
+---
+
+## 4. Diagnostic Output and Context
+
+Please provide any additional information that might assist in zero-day debugging. Logs are the single most important component of a valid bug report.
+
+### Console Logs (Browser Developer Tools F12)
+Capture all output from the background service worker or the extension popup console, focusing on red error messages and stack traces.
+
+javascript
+// Paste error logs, stack traces, or console output here.
+
+
+### Screenshots / Recordings
+If the issue is visual (e.g., graph rendering corruption), please attach high-resolution screenshots or a short screen recording.
+
+### Potential Root Cause Analysis (Optional)
+If you have investigated the codebase or network activity, provide a hypothesis here. This accelerates the fix process.
+
+---
+*This bug report template enforces the **Apex Technical Authority** standard for maximum diagnostic efficiency.*

@@ -1,43 +1,41 @@
-badges:
-  - name: build-status
-    label: Build
-    message: passing
-    color: success
-    image_url: https://github.com/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/actions/workflows/ci.yml/badge.svg
-    link_url: https://github.com/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/actions/workflows/ci.yml
-    style: flat-square
-  - name: code-coverage
-    label: Coverage
-    message: 95%
-    color: brightgreen
-    image_url: https://codecov.io/gh/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/branch/main/graph/badge.svg
-    link_url: https://codecov.io/gh/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension
-    style: flat-square
-  - name: tech-stack
-    label: Stack
-    message: JS %7C WXT %7C Vite
-    color: blue
-    image_url: https://img.shields.io/badge/Stack-JS%20%7C%20WXT%20%7C%20Vite-blue?style=flat-square
-    link_url: https://github.com/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension
-    style: flat-square
-  - name: lint-format
-    label: Lint %26 Format
-    message: Biome
-    color: 007EC6
-    image_url: https://img.shields.io/badge/Lint%20%26%20Format-Biome-007EC6?style=flat-square
-    link_url: https://biomejs.dev/
-    style: flat-square
-  - name: license
-    label: License
-    message: CC BY-NC 4.0
-    color: lightgrey
-    image_url: https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=flat-square
-    link_url: https://creativecommons.org/licenses/by-nc/4.0/
-    style: flat-square
-  - name: github-stars
-    label: Stars
-    message: x
-    color: yellow
-    image_url: https://img.shields.io/github/stars/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension?style=flat-square&cacheSeconds=86400
-    link_url: https://github.com/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/stargazers
-    style: flat-square
+build:
+  - name: Build Status
+    url: https://github.com/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/actions/workflows/ci.yml
+    image: https://img.shields.io/github/actions/workflow/status/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/ci.yml?style=flat-square
+    alt: Build Status
+
+coverage:
+  - name: Code Coverage
+    url: https://codecov.io/gh/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension
+    image: https://codecov.io/gh/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/branch/main/graphs/badge.svg?token=YOUR_CODECOV_TOKEN
+    alt: Code Coverage
+
+license:
+  - name: License
+    url: https://github.com/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/blob/main/LICENSE
+    image: https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg?style=flat-square
+    alt: License
+
+language:
+  - name: Language
+    url: https://www.typescriptlang.org/
+    image: https://img.shields.io/badge/language-TypeScript-3178C6.svg?style=flat-square
+    alt: TypeScript
+
+framework:
+  - name: Framework
+    url: https://vitejs.dev/
+    image: https://img.shields.io/badge/framework-Vite-646CFF.svg?style=flat-square
+    alt: Vite
+
+linter:
+  - name: Linter
+    url: https://biomejs.dev/
+    image: https://img.shields.io/badge/linter-Biome-FF7053.svg?style=flat-square
+    alt: Biome
+
+stars:
+  - name: GitHub Stars
+    url: https://github.com/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension/stargazers
+    image: https://img.shields.io/github/stars/chirag127/TabFlow-Digital-Journey-Mapper-Browser-Extension?color=gold&style=flat-square
+    alt: GitHub Stars

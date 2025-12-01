@@ -1,55 +1,255 @@
-# Tab DNA Browser Extension
+# TabFlow: Visualize Your Digital Journeys
 
-**Visualize your browsing journey.**
+TabFlow is an advanced browser extension that meticulously tracks and visually maps digital journeys. It transforms browsing history into interactive, branch-like graphs, revealing intricate click paths and referral chains. Gain unparalleled insights into navigation patterns, understand your browsing habits, and optimize your online exploration with this privacy-focused data visualization tool.
 
-Tab DNA is a browser extension that visualizes the click path or referral chain that led a user to their current tab in the form of a branch-like graph. This helps users understand how they navigated across different sites and pages, offering insight into their browsing habits and decision-making patterns.
+[![Build Status](https://img.shields.io/github/actions/workflow/user/your-username/your-repo/main.yml?style=flat-square&logo=githubactions&label=CI%20Status)](https://github.com/your-username/your-repo/actions)
+[![Coverage](https://img.shields.io/codecov/c/github/your-username/your-repo?style=flat-square&logo=codecov&label=Coverage)](https://codecov.io/gh/your-username/your-repo)
+[![Tech Stack](https://img.shields.io/badge/TechStack-JS-blue?style=flat-square&logo=javascript)](https://github.com/your-username/your-repo)
+[![License](https://img.shields.io/github/license/your-username/your-repo?style=flat-square&logo=opensourceinitiative)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/your-username/your-repo?style=flat-square&logo=github)](https://github.com/your-username/your-repo/stargazers)
 
-## Features
+--- 
 
-### Core Features
+## 🚀 Project Overview
 
--   **Real-Time Click Path Tracking**: Track referrer URLs when a link is clicked that opens a new tab or navigates in the current tab.
--   **Branch-Like Graph Visualization**: Interactive UI to view tab lineage as a collapsible tree.
--   **Session-Based Timeline**: Organize tab graphs by session and show time spent on each node.
--   **Manual Link Nodes**: Allow users to optionally link directly opened pages to a known origin.
--   **Export & Share**: Export the tab journey graph as PNG, SVG, or JSON.
+TabFlow empowers users with a deep understanding of their online navigation. By transforming raw browsing data into intuitive, visual graphs, it provides clarity on how users traverse websites, discover content, and follow referral paths. This privacy-first extension prioritizes local data processing, ensuring your browsing insights remain yours.
 
-### Privacy
+--- 
 
--   All browsing data is stored locally unless user enables sync.
--   No third-party sharing of URLs or session graphs.
--   Users can delete session history at any time.
+## 🏛️ Architecture
 
-## Installation
+```ascii
+. 
+└── tabflow-browser-extension/
+    ├── src/
+    │   ├── background/
+    │   │   └── background.ts      # Service worker, event handling
+    │   ├── content/
+    │   │   └── content.ts         # Injected scripts, DOM interaction
+    │   ├── popup/
+    │   │   ├── Popup.tsx          # Main UI component
+    │   │   └── main.ts            # Popup entry point
+    │   ├── service/
+    │   │   └── historyService.ts  # Logic for fetching/processing history
+    │   ├── utils/
+    │   │   └── graphRenderer.ts   # Visualization logic
+    │   ├── types/
+    │   │   └── index.ts           # TypeScript definitions
+    │   └── manifest.ts            # Web Extension Manifest configuration
+    ├── tests/
+    │   ├── background/
+    │   ├── content/
+    │   └── popup/
+    ├── .gitignore
+    ├── package.json
+    ├── README.md
+    ├── tsconfig.json
+    └── vite.config.ts
+```
 
-### Development Installation
+--- 
 
-1. Clone this repository
-2. Navigate to the extension directory: `cd extension`
-3. Run `npm install` to install dependencies
-4. Run `npm run build` to build the extension
-5. Load the `dist` folder as an unpacked extension in your browser:
-    - Chrome: Go to `chrome://extensions/`, enable Developer mode, and click "Load unpacked"
-    - Firefox: Go to `about:debugging#/runtime/this-firefox`, click "Load Temporary Add-on", and select any file in the `dist` folder
+## 📜 Table of Contents
 
-## Development
+* [Project Overview](#-project-overview)
+* [Architecture](#-architecture)
+* [Features](#-features)
+* [Getting Started](#-getting-started)
+* [Development](#-development)
+* [Testing](#-testing)
+* [Contributing](#-contributing)
+* [License](#-license)
+* [AI Agent Directives](#-ai-agent-directives)
 
-### Commands
+--- 
 
--   `npm run build`: Build the extension for production
--   `npm run dev`: Build the extension and watch for changes
--   `npm run generate-icons`: Generate extension icons
+## ✨ Features
+
+*   **Visual Path Mapping:** Generates interactive, graph-based visualizations of browsing history.
+*   **Click Path & Referral Analysis:** Uncovers detailed sequences of page visits and external links.
+*   **Privacy-Focused:** All data processing occurs locally within the browser.
+*   **Insight Generation:** Provides actionable data for understanding navigation habits.
+*   **Customizable Views:** Future enhancements for filtering and tailoring visualized paths.
+
+--- 
+
+## 🚀 Getting Started
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/your-repo.git
+    cd your-repo
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or using uv for Pythonic projects:
+    # uv install
+    ```
+
+3.  **Build for development:**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Load the extension in your browser:**
+    Follow your browser's instructions for loading an unpacked extension. Typically, this involves going to `chrome://extensions` (or equivalent) and selecting the `dist` folder generated by the build process.
+
+--- 
+
+## 💻 Development
 
 ### Project Structure
 
--   `src/background`: Background script for tab tracking
--   `src/popup`: Popup UI for visualization
--   `src/options`: Options page for settings
--   `src/content`: Content script for page interaction
--   `src/utils`: Utility functions
--   `src/components`: Reusable UI components
--   `public`: Static assets
+The project follows a modular structure, separating concerns into `background`, `content`, and `popup` scripts, with shared `service` and `utils` layers. TypeScript is used for type safety, and Vite is employed for efficient bundling.
 
-## License
+### Scripts
 
-MIT
+| Script         | Description                                      |
+| -------------- | ------------------------------------------------ | 
+| `npm run dev`  | Starts the development server with hot-reloading. |
+| `npm run build`| Builds the extension for production.             |
+| `npm run lint` | Runs the linter (Biome).                         |
+| `npm run test` | Executes unit and integration tests (Vitest).    |
+
+### Principles
+
+*   **SOLID:** Adherence to Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion principles.
+*   **DRY (Don't Repeat Yourself):** Code reuse is prioritized.
+*   **KISS (Keep It Simple, Stupid):** Logic is kept straightforward and maintainable.
+*   **YAGNI (You Ain't Gonna Need It):** Features are only implemented when necessary.
+
+--- 
+
+## 🧪 Testing
+
+TabFlow employs a comprehensive testing strategy to ensure reliability and robustness.
+
+*   **Unit Tests:** Written using Vitest, located in the `tests/` directory, mirroring the source structure.
+*   **E2E Tests:** (Future implementation) Playwright will be used for end-to-end scenario validation.
+*   **Coverage:** Aiming for 100% test coverage. All production code MUST have corresponding tests.
+
+**To run tests:**
+```bash
+npm run test
+```
+
+--- 
+
+## 🤝 Contributing
+
+We welcome contributions! Please read our [CONTRIBUTING.md](.github/CONTRIBUTING.md) file for details on the code of conduct, and the process for submitting pull requests.
+
+--- 
+
+## ⚖️ License
+
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). See the [LICENSE](LICENSE) file for details.
+
+--- 
+
+## 🤖 AI Agent Directives
+
+<details>
+<summary>AI Agent Configuration & Alignment</summary>
+
+# SYSTEM: APEX TECHNICAL AUTHORITY & ELITE ARCHITECT (DECEMBER 2025 EDITION)
+
+## 1. IDENTITY & PRIME DIRECTIVE
+**Role:** Senior Principal Software Architect, Master Technical Copywriter, DevOps Strategist.
+**Context:** Current Date is **December 2025**. Building for the 2026 standard.
+**Output Standard:** EXECUTION-ONLY. No plans, only executed code, updated docs, and applied fixes.
+**Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
+
+--- 
+
+## 2. AI ORCHESTRATION & GEMINI PROTOCOL (LATE 2025)
+**Mandate:** Use specific models with a Fallback Cascade:
+*   **Tier 1:** `gemini-3-pro-preview`
+*   **Tier 2:** `gemini-2.5-pro`
+*   **Tier 3:** `gemini-2.5-flash`
+*   **Tier 4:** `gemini-2.5-flash-lite-preview-09-2025`
+*   **Tier 5:** `gemini-2.0-flash`, `gemini-2.5-flash-native-audio-preview-09-2025`
+**Circuit Breaker:** 429/500 errors trigger a Cool-Off Period and fallback.
+
+--- 
+
+## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
+**Directives:** Detect project type and apply **Apex Toolchain**.
+*   **SCENARIO A: WEB / APP / EXTENSION (TypeScript)**
+    *   **Stack:** **TypeScript 6.x** (Strict), **Vite 7** (Rolldown), **Tauri v2.x** (Native), **WXT** (Extensions).
+    *   **State:** **Signals** (Standardized).
+    *   **Lint/Test:** **Biome** (Speed) + **Vitest** (Unit) + **Playwright** (E2E).
+*   **SCENARIO B: SYSTEMS / PERFORMANCE (Rust/Go)**
+    *   **Stack:** **Rust 1.8x** (Cargo) or **Go 1.2x**.
+    *   **Lint:** **Clippy** / **GolangCI-Lint**.
+*   **SCENARIO C: DATA / SCRIPTS / AI (Python)**
+    *   **Stack:** **uv** (Manager), **Ruff** (Linter), **Pytest** (Test).
+
+**PROJECT SPECIFIC:** `TabFlow-Navigation-Path-Analytics-Browser-Extension` is a **JavaScript Browser Extension**. Therefore, the **Apex Toolchain for Scenario A** will be applied, with specific notes for extension development (WXT is implied if using Vite for extensions).
+
+--- 
+
+## 4. RECURSIVE PERFECTION LOOP (THE "ZERO-ERROR" MANDATE)
+**The Loop:** Analyze -> Fix -> Lint/Format (`biome check --apply`) -> Test (`vitest`) -> DECISION GATE.
+*   **IF Errors/Warnings Exist:** GO TO STEP 2 (Self-Correct).
+*   **IF Clean:** COMMIT and Present.
+**Constraint:** DO NOT STOP until the build is perfectly clean.
+
+--- 
+
+## 5. CORE ARCHITECTURAL PRINCIPLES
+*   **SOLID MANDATE:** SRP, OCP, LSP, ISP, DIP.
+*   **MODULARITY:** Feature-First Structure.
+*   **CQS:** Methods are Commands (Action) or Queries (Data).
+*   **12-Factor App:** Config in environment.
+
+--- 
+
+## 6. CODE HYGIENE & STANDARDS (READABILITY FIRST)
+*   **SEMANTIC NAMING PROTOCOL:** Descriptive Verbs, `camelCase` (JS/TS), `snake_case` (Python), `PascalCase` (Classes).
+*   **CLEAN CODE RULES:** Verticality, Guard Clauses (No Nesting), DRY, KISS, Zero Comments (Only for "Why").
+
+--- 
+
+## 7. RELIABILITY, SECURITY & SUSTAINABILITY
+*   **DEVSECOPS PROTOCOL:** Zero Trust (OWASP Top 10 2025), SBOMs, Fail Fast, Encryption.
+*   **EXCEPTION HANDLING:** NEVER crash, `try-catch-finally`, retry logic.
+*   **GREEN SOFTWARE:** Rule of Least Power, Efficiency, Lazy Loading.
+
+--- 
+
+## 8. COMPREHENSIVE TESTING STRATEGY
+*   **FOLDER SEPARATION PROTOCOL:** Source folder for code, `tests/` for tests.
+*   **TESTING PYRAMID (F.I.R.S.T.):** Fast, Isolated, Repeatable.
+*   **COVERAGE MANDATE:** 1:1 Mapping, Scenario Coverage (Success, Failure, Edge Cases), Zero console errors.
+
+--- 
+
+## 9. UI/UX AESTHETIC SINGULARITY (2026 STANDARD)
+*   **VISUAL LANGUAGE:** Liquid Glass + Neo-Brutalist + Material You 3.0. Fluid animations.
+*   **PERFORMANCE UX:** INP < 200ms, Optimistic UI.
+*   **INTERACTION DESIGN:** Hyper-Personalization, Micro-interactions.
+*   **HYPER-CONFIGURABILITY:** User-configurable features and colors.
+
+--- 
+
+## 10. DOCUMENTATION & VERSION CONTROL
+*   **HERO-TIER README:** BLUF, Live Sync, Visuals (Badges, Trees), AI Replication Block, "Star ⭐ this Repo".
+*   **ADVANCED GIT OPERATIONS:** Conventional Commits, Semantic Versioning.
+
+--- 
+
+## 11. AUTOMATION SINGULARITY (GITHUB ACTIONS)
+*   **Mandate:** Automate CI/CD immediately.
+*   **Workflows:** Integrity (Lint/Test), Security (Audit/SBOM), Release (Versioning/Artifacts), Deps (Auto-merge).
+
+--- 
+
+## 12. THE ATOMIC EXECUTION CYCLE
+**Loop:** Audit -> Research -> Plan -> Act -> Automate -> Docs -> Verify -> REITERATE (until clean) -> Commit.
+
+</details>

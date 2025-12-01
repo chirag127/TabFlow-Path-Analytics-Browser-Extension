@@ -1,47 +1,51 @@
-# --- APEX STANDARD IGNORE FILE (DECEMBER 2025) ---
+# Node.js
+node_modules/
+.npm
+.yarn/
+build/
+dist/
+out/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Operating System / Metadata
+# Vite/WXT specific build artifacts and caches
+.vite/
+.wxt/
+wxt-dist/
+web-ext-data/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor/IDE configurations
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.user
+*.sln.docstates
+
+# OS generated files
 .DS_Store
 Thumbs.db
-.env
-*.log
 
-# Node / JavaScript Ecosystem
-/node_modules
-/dist
-/build
-.turbo/
+# Test related outputs
+.vitest/
 
-# Vite Build Artifacts
-/vite-temp
-/coverage
+# Biome cache or configuration (if not intended for commit)
+.biome/
 
-# Biome / Linters / Formatters
-.biome.jsonc.generated
-.cache/
-
-# TypeScript
-*.tsbuildinfo
-
-# Playwright
-/test-results
-playwright-report.html
-
-# Browser Extension Artifacts (Manifest V3 specific)
-__package_tmp__/
-*.crx
-*.xpi
-
-# Source Maps & Temporary Files
-*.map
+# Other common temporary files
+*~
+*.bak
 *.swp
-
-# Testing Artifacts
-/jest-test-results
-
-# Editor/IDE specific
-.vscode/
-.idea/
-
-# NPM Cache
-.npm/
+*.swo
+*.tmp
